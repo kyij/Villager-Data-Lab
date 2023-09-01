@@ -66,8 +66,7 @@ def all_names_by_hobby(filename):
     
     for line in file:
 
-        name = file[0]
-        hobby = line.rstrip().split("|")[3]
+        name, _, _, hobby, _ = line.rstrip().split("|")
 
         if hobby == 'Fitness':
             fitness.append(name)
@@ -165,3 +164,6 @@ def find_likeminded_villagers(filename, villager_name):
 print(all_species("villagers.csv"))
 print(get_villagers_by_species("villagers.csv", search_string="All"))
 print(all_names_by_hobby("villagers.csv"))
+print(all_data("villagers.csv"))
+print(find_motto("villagers.csv", villager_name))
+print(find_likeminded_villagers("villagers.csv", villager_name))
